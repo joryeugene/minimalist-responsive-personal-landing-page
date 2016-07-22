@@ -1,0 +1,38 @@
+/*Jory Eugene Pestorious*/
+html {
+  background: url(bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+main {
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+}
+
+svg {
+  cursor: pointer;
+  fill: rgba(0, 0, 0, 0.85);
+  padding-right: 10px;
+  transition: transform ease-out 0.22s, fill ease-out 0.25s;
+  width: 12vh;
+}
+
+svg:hover {
+  fill: rgba(0, 0, 0, 0.35);
+  transform: scale(0.97);
+}
+
+a:focus{
+  outline: none;
+}
+
+svg:active{
+  fill: rgba(0, 0, 0, 0.0);
+}
