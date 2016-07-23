@@ -1,4 +1,4 @@
-# Minimalistic Responsive Personal Website
+# Minimalist Responsive Personal Website
 
 My minimalist **responsive** personal website with cover background image and social media links
 
