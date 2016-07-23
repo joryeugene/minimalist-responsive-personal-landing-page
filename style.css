@@ -32,7 +32,8 @@ main {
 svg {
   cursor: pointer;
   fill: rgba(0, 0, 0, 0.85);
-  padding-right: 14px;
+  padding-right: 7px;
+  padding-left: 7px;
   transition: transform ease-out 0.22s, fill ease-out 0.25s;
   width: 12vh;
 }
