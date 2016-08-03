@@ -30,7 +30,7 @@ html {
 /* Background image for smaller screens */
 @media (max-width: 740px) {
   #bg {
-     background-image: url(bg_mobile2.jpg);
+     background-image: url(bg_mobile.jpg);
   }
 }
 
