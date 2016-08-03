@@ -55,13 +55,13 @@ main {
 }
 
 #change:hover {
-  fill: rgba(244, 241, 203, 0.55);
+  fill: rgba(244, 241, 203, 0.7);
   transform: rotate(-360deg);
   -webkit-transform: rotate(-360deg);
 }
 
-span:focus #change {
-  fill: rgba(244, 241, 203, 0.55);
+#changeSpan:focus #change {
+  fill: rgba(244, 241, 203, 0.7);
   outline: none;
 }
 
@@ -90,6 +90,6 @@ a:focus .main-icons {
   -webkit-transform: scale(0.98);
 }
 
-span:active #change, a:active .main-icons {
+#changeSpan:active #change, a:active .main-icons {
   fill: rgba(0, 0, 0, 0.0);
 }
