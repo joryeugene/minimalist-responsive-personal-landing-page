@@ -35,6 +35,8 @@ html {
 }
 
 main {
+  border: 2px solid white;
+  margin: 0 auto;
   position: absolute;
   text-align: center;
   top: 50%;
@@ -44,14 +46,15 @@ main {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: 95vh;
 }
 
 svg {
+  border: 2px solid yellow;
   cursor: pointer;
   fill: rgba(0, 0, 0, 0.85);
-  padding-right: 1.4vh;
-  padding-left: 1.4vh;
+  margin-right: 1.4vh;
+  margin-left: 1.4vh;
+  margin-bottom: -5px;
   transition: transform ease-out 0.22s, fill ease-out 0.25s;
   width: 12vh;
 }
