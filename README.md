@@ -14,6 +14,6 @@ It uses _fluid sizing_ and _spacing_, _tailored background image selection_ thro
 * **IE 11** - CSS fill transition does not work for SVG elements
  * So I removed the transition on the fill, but it feels a bit more harsh
 * **IE 10** and below does not support CSS transforms on SVG elements (though SVG transform attributes do work)
- * So the subtle scaling in on hover might not work
-* When the Change Background Icon is in focus, the function is not called when Enter is pressed
+ * So the subtle scaling-in on hover might not work
+* When the **Change Background Icon** is in focus, the function is not called when _Enter_ is pressed
  * _Working on it_

@@ -15,8 +15,6 @@ html {
   background-position: center center;
   /* background-attachment: fixed; removed for Android browser */
   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 }
 
@@ -40,35 +38,58 @@ main {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 100%;
 }
 
-svg {
+/*Background Change Icon Styling*/
+#change {
+  right: 2.5vh;
+  bottom: 2.5vh;
+  height: 7vh;
+  width: 7vh;
+  cursor: pointer;
+  fill: rgba(252, 249, 202, 0.4);
+  position: absolute;
+  transition: transform ease-in 0.3s 0s, -webkit-transform ease-in 0.3s 0s;
+}
+
+#change:hover {
+  fill: rgba(244, 241, 203, 0.55);
+  transform: rotate(-360deg);
+  -webkit-transform: rotate(-360deg);
+}
+
+#change:focus {
+  fill: rgba(244, 241, 203, 0.55);
+  outline: none;
+}
+
+/*Main Icons Styling*/
+.main-icons {
   cursor: pointer;
   fill: rgba(0, 0, 0, 0.85);
   margin: 0 1.4vh 0 1.4vh;
-  transition: transform ease-out 0.22s, fill ease-out 0.25s;
+  transition: transform ease-out 0.22s 0s, -webkit-transform ease-out 0.22s 0s;
   width: 12vh;
 }
 
-svg:hover {
+.main-icons:hover {
   fill: rgba(0, 0, 0, 0.35);
-  transform: scale(0.97);
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
 }
 
 a:focus{
   outline: none;
 }
 
-a:focus svg {
+a:focus .main-icons {
   fill: rgba(0, 0, 0, 0.35);
-  transform: scale(0.97);
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
 }
 
-a:active svg {
+#change:active, a:active .main-icons {
   fill: rgba(0, 0, 0, 0.0);
 }
