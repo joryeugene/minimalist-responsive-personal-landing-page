@@ -3,6 +3,15 @@ var big = window.matchMedia( "(min-width: 741px)" );
 var small = window.matchMedia( "(max-width: 740px)" );
 var count = 0;
 
+// Add keyboard accessibility to Change Background button
+var changeEnter = document.getElementById("changeSpan")
+changeEnter.addEventListener("keypress", function(event) {
+    event.preventDefault();
+    if (event.keyCode == 13) {
+        changeEnter.click();
+    }
+});
+
 function changeBackground() {
   // Remove anything from being selected
   if (window.getSelection) {
