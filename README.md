@@ -17,3 +17,4 @@ It uses _fluid sizing_ and _spacing_, _tailored background image selection_ thro
  * So the subtle scaling-in on hover might not work
 * When the **Change Background Icon** is in focus, the function is not called when _Enter_ is pressed
  * _Working on it_
+* **Change Background Button** is not working on the default Android browser
