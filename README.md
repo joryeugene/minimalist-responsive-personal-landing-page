@@ -17,4 +17,5 @@ It uses _fluid sizing_ and _spacing_, _tailored background image selection_ thro
  * So the subtle scaling-in on hover and focus might not work on older versions of IE
 * ~~**Change Background button** does not have keyboard accessibility~~
  * Fixed
-* **Change Background button** is not working on the default Android browser
+* ~~**Change Background button** is not working on the default Android browser~~
+  * Fixed
