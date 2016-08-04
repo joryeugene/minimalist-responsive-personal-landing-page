@@ -3,7 +3,7 @@
 My minimalist **responsive** personal landing page with cover background image and social media links.
 
 #### It works on all devices in landscape and portrait orientations.
-It uses _fluid sizing_ and _spacing_, _tailored background image selection_ through media queries, and _enhanced SVG_ and _link accessibility_ through _ARIA attributes_.
+It uses _fluid sizing_ and _spacing_, _tailored background image selection_ through media queries, and enhanced _accessibility_ through _ARIA attributes_ and _keyboard_ accessibility.
 
 * Background image can be changed with the button in the bottom right corner
 * Alternate background images are preload depending on device screen size
