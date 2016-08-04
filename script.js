@@ -1,8 +1,3 @@
-var bg = document.getElementById("bg");
-var big = window.matchMedia("(min-width: 741px)");
-var small = window.matchMedia("(max-width: 740px)");
-var count = 0;
-
 // Add keyboard accessibility to Change Background button
 var changeEnter = document.getElementById("changeSpan");
 changeEnter.addEventListener("keypress", function(event) {
@@ -11,6 +6,17 @@ changeEnter.addEventListener("keypress", function(event) {
         changeEnter.click();
     }
 });
+////////////////////////////////////////////////////////////////////////////////
+
+// Responsive breakpoint right above iPhone 6+ horizontal view for smaller images
+// iPad and bigger will receive larger images
+var big = window.matchMedia("(min-width: 741px)");
+var small = window.matchMedia("(max-width: 740px)");
+
+var bg = document.getElementById("bg");
+var count = 0;
+var lgImages = ["url(jpg/bg2.jpg)", "url(jpg/bg3.jpg)", "url(jpg/bg.jpg)"];
+var smImages = ["url(jpg/bg_mobile2.jpg)", "url(jpg/bg_mobile3.jpg)", "url(jpg/bg_mobile.jpg)"];
 
 function changeBackground() {
   // Remove anything from being selected
@@ -23,43 +29,42 @@ function changeBackground() {
   } else if (document.selection) {  // IE?
     document.selection.empty();
   }
-  // Change background depending on size
+
+  // Cycle through backgrounds depending on size
   if (big.matches) {
-    if (count%2===0) {
-      bg.style.backgroundImage = "url(bg2.jpg)";
-      count++;
-    } else {
-      bg.style.backgroundImage = "url(bg.jpg)";
-      count++;
-    }
+    bg.style.backgroundImage = lgImages[count];
+    count++;
+    if (count===lgImages.length) count=0;
   }
   if (small.matches) {
-    if (count%2===0) {
-      bg.style.backgroundImage = "url(bg_mobile2.jpg)";
-      count++;
-    } else {
-      bg.style.backgroundImage = "url(bg_mobile.jpg)";
-      count++;
-    }
+    bg.style.backgroundImage = smImages[count];
+    count++;
+    if (count===smImages.length) count=0;
   }
 }
+////////////////////////////////////////////////////////////////////////////////
 
 // Preload alternate background images depending on browser size
 function preloader() {
   if (big.matches) {
     if (document.images) {
   		var img1 = new Image();
-      img1.src = "bg2.jpg";
+      var img2 = new Image();
+      img1.src = "jpg/bg2.jpg";
+      img2.src = "jpg/bg3.jpg";
     }
   }
   if (small.matches) {
     if (document.images) {
   		var img1 = new Image();
-      img1.src = "bg_mobile2.jpg";
+      var img2 = new Image();
+      img1.src = "jpg/bg_mobile2.jpg";
+      img2.src = "jpg/bg_mobile3.jpg";
     }
   }
 }
 
+// Only loads after the main page has loaded
 function addLoadEvent(func) {
 	var oldonload = window.onload;
 	if (typeof window.onload != 'function') {
