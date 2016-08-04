@@ -52,6 +52,7 @@ main {
   fill: rgba(252, 249, 202, 0.4);
   position: absolute;
   transition: transform ease-in 0.3s 0s, -webkit-transform ease-in 0.3s 0s;
+  z-index: 1;
 }
 
 #change:hover {
