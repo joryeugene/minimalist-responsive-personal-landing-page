@@ -3,6 +3,9 @@ var big = window.matchMedia("(min-width: 741px)");
 var small = window.matchMedia("(max-width: 740px)");
 var count = 0;
 
+WebView wv = (WebView) findViewById(R.id.webview);
+wv.getSettings().setJavaScriptEnabled(true);
+
 // Add keyboard accessibility to Change Background button
 var changeEnter = document.getElementById("changeSpan");
 changeEnter.addEventListener("keypress", function(event) {
@@ -13,7 +16,7 @@ changeEnter.addEventListener("keypress", function(event) {
 });
 
 function changeBackground() {
-  
+
   // Remove anything from being selected
   if (window.getSelection) {
     if (window.getSelection().empty) {  // Chrome
