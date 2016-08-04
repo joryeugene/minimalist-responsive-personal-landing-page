@@ -21,14 +21,14 @@ html {
 /* Background image for larger screens */
 @media (min-width: 741px) {
   #bg {
-    background-image: url(bg.jpg);
+    background-image: url(jpg/bg.jpg);
   }
 }
 
 /* Background image for smaller screens */
 @media (max-width: 740px) {
   #bg {
-     background-image: url(bg_mobile.jpg);
+     background-image: url(jpg/bg_mobile.jpg);
   }
 }
 
