@@ -1,10 +1,10 @@
-var bg = document.getElementById('bg');
-var big = window.matchMedia( "(min-width: 741px)" );
-var small = window.matchMedia( "(max-width: 740px)" );
+var bg = document.getElementById("bg");
+var big = window.matchMedia("(min-width: 741px)");
+var small = window.matchMedia("(max-width: 740px)");
 var count = 0;
 
 // Add keyboard accessibility to Change Background button
-var changeEnter = document.getElementById("changeSpan")
+var changeEnter = document.getElementById("changeSpan");
 changeEnter.addEventListener("keypress", function(event) {
     event.preventDefault();
     if (event.keyCode == 13) {
@@ -13,6 +13,7 @@ changeEnter.addEventListener("keypress", function(event) {
 });
 
 function changeBackground() {
+  
   // Remove anything from being selected
   if (window.getSelection) {
     if (window.getSelection().empty) {  // Chrome
@@ -23,6 +24,7 @@ function changeBackground() {
   } else if (document.selection) {  // IE?
     document.selection.empty();
   }
+
   // Change background depending on size
   if (big.matches) {
     if (count%2===0) {
