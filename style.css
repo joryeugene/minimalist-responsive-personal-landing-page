@@ -80,16 +80,16 @@ main {
   -webkit-transform: scale(0.98);
 }
 
-a:focus{
+main > a:focus{
   outline: none;
 }
 
-a:focus .main-icons {
+main > a:focus .main-icons {
   fill: rgba(0, 0, 0, 0.35);
   transform: scale(0.98);
   -webkit-transform: scale(0.98);
 }
 
-#changeSpan:active #change, a:active .main-icons {
+#changeSpan:active #change, main > a:active .main-icons {
   fill: rgba(0, 0, 0, 0.0);
 }
