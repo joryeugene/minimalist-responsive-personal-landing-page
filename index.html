@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Test -->
+<!-- Jory Eugene Pestorious -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,7 +21,6 @@
       z-index: 0;
       background-repeat: no-repeat;
       background-position: center center;
-      -webkit-background-size: cover;
       background-size: cover;
     }
     @media (min-width: 741px) {
@@ -86,6 +85,18 @@
     }
     #changeSpan:active #change, main > a:active .main-icons {
       fill: rgba(0, 0, 0, 0.0);
+    }
+    @media (orientation: landscape) and (max-width: 740px) {
+      .main-icons {
+        margin: 0 2.4vh 0 2.4vh;
+        width: 20vh;
+      }
+      #change {
+        right: 4vh;
+        bottom: 4vh;
+        height: 13vh;
+        width: 13vh;
+      }
     }
   </style>
 </head>
