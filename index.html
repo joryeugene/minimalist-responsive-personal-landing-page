@@ -222,10 +222,10 @@
     window.addEventListener("orientationchange", function() { // not working on Firefox?
       count=0;
       if (smallLandscape.matches) {
-        bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[2] + ")";
+        bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[smLandscapeImages.length-1] + ")";
       }
       if (smallPortrait.matches) {
-        bg.style.backgroundImage = "url(jpg/" + smPortraitImages[2] + ")";
+        bg.style.backgroundImage = "url(jpg/" + smPortraitImages[smPortraitImages.length-1] + ")";
       }
       preloader();
     });
