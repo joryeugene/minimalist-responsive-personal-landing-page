@@ -219,7 +219,7 @@
       count++;
       if (count===lgImages.length) count=0;
     }
-    window.addEventListener("orientationchange", function() {
+    window.addEventListener("orientationchange", function() { // not working on Firefox
       if (smallLandscape.matches) {
         bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[count] + ")";
       }
@@ -227,7 +227,6 @@
         bg.style.backgroundImage = "url(jpg/" + smPortraitImages[count] + ")";
       }
       preloader();
-      // location.reload();
     });
     function preloader() {
       if (big.matches) {
