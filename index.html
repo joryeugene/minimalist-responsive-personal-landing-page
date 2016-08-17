@@ -224,14 +224,15 @@
       }
     }
     window.addEventListener("orientationchange", function() {
-      if (smallLandscape.matches) {
-        bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[2] + ")";
-        preloader();
-      }
-      if (smallPortrait.matches) {
-        bg.style.backgroundImage = "url(jpg/" + smPortraitImages[2] + ")";
-        preloader();
-      }
+      // if (smallLandscape.matches) {
+      //   bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[2] + ")";
+      //   preloader();
+      // }
+      // if (smallPortrait.matches) {
+      //   bg.style.backgroundImage = "url(jpg/" + smPortraitImages[2] + ")";
+      //   preloader();
+      // }
+      location.reload();
     });
     function preloader() {
       if (big.matches) {
