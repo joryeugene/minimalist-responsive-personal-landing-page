@@ -15,8 +15,8 @@ var small = window.matchMedia("(max-width: 740px)");
 
 var bg = document.getElementById("bg");
 var count = 0;
-var lgImages = ["url(jpg/bg2.jpg)", "url(jpg/bg3.jpg)", "url(jpg/bg.jpg)"];
-var smImages = ["url(jpg/bg_mobile2.jpg)", "url(jpg/bg_mobile3.jpg)", "url(jpg/bg_mobile.jpg)"];
+var lgImages = ["bg2.jpg", "bg3.jpg", "bg.jpg"];
+var smImages = ["bg_mobile2.jpg", "bg_mobile3.jpg", "bg_mobile.jpg"];
 
 function changeBackground() {
   // Remove anything from being selected
@@ -32,12 +32,12 @@ function changeBackground() {
 
   // Cycle through backgrounds depending on size
   if (big.matches) {
-    bg.style.backgroundImage = lgImages[count];
+    bg.style.backgroundImage = "url(jpg/" + lgImages[count] + ")";
     count++;
     if (count===lgImages.length) count=0;
   }
   if (small.matches) {
-    bg.style.backgroundImage = smImages[count];
+    bg.style.backgroundImage = "url(jpg/" + smImages[count] + ")";
     count++;
     if (count===smImages.length) count=0;
   }

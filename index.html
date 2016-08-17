@@ -9,84 +9,84 @@
   <!-- <link rel="stylesheet" href="style.css"> -->
   <link rel="icon" href="favicon.png">
   <style>
-  html {
-    background-color: #000000;
-  }
-  #bg {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    background-repeat: no-repeat;
-    background-position: center center;
-    -webkit-background-size: cover;
-    background-size: cover;
-  }
-  @media (min-width: 741px) {
-    #bg {
-      background-image: url(jpg/bg.jpg);
+    html {
+      background-color: #000000;
     }
-  }
-  @media (max-width: 740px) {
     #bg {
-       background-image: url(jpg/bg_mobile.jpg);
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background-repeat: no-repeat;
+      background-position: center center;
+      -webkit-background-size: cover;
+      background-size: cover;
     }
-  }
-  main {
-    display: block;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 100%;
-  }
-  #change {
-    right: 2.5vh;
-    bottom: 2.5vh;
-    height: 7vh;
-    width: 7vh;
-    cursor: pointer;
-    fill: rgba(252, 249, 202, 0.4);
-    position: absolute;
-    transition: transform ease-in 0.3s 0s, -webkit-transform ease-in 0.3s 0s;
-    z-index: 1;
-  }
-  #change:hover {
-    fill: rgba(244, 241, 203, 0.7);
-    transform: rotate(-360deg);
-    -webkit-transform: rotate(-360deg);
-  }
-  #changeSpan:focus #change {
-    fill: rgba(244, 241, 203, 0.7);
-    outline: none;
-  }
-  .main-icons {
-    cursor: pointer;
-    fill: rgba(0, 0, 0, 0.85);
-    margin: 0 1.4vh 0 1.4vh;
-    transition: transform ease-out 0.22s 0s, -webkit-transform ease-out 0.22s 0s;
-    width: 12vh;
-  }
-  .main-icons:hover {
-    fill: rgba(0, 0, 0, 0.35);
-    transform: scale(0.98);
-    -webkit-transform: scale(0.98);
-  }
-  main > a:focus{
-    outline: none;
-  }
-  main > a:focus .main-icons {
-    fill: rgba(0, 0, 0, 0.35);
-    transform: scale(0.98);
-    -webkit-transform: scale(0.98);
-  }
-  #changeSpan:active #change, main > a:active .main-icons {
-    fill: rgba(0, 0, 0, 0.0);
-  }
+    @media (min-width: 741px) {
+      #bg {
+        background-image: url(jpg/bg.jpg);
+      }
+    }
+    @media (max-width: 740px) {
+      #bg {
+         background-image: url(jpg/bg_mobile.jpg);
+      }
+    }
+    main {
+      display: block;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+    #change {
+      right: 2.5vh;
+      bottom: 2.5vh;
+      height: 7vh;
+      width: 7vh;
+      cursor: pointer;
+      fill: rgba(252, 249, 202, 0.4);
+      position: absolute;
+      transition: transform ease-in 0.3s 0s, -webkit-transform ease-in 0.3s 0s;
+      z-index: 1;
+    }
+    #change:hover {
+      fill: rgba(244, 241, 203, 0.7);
+      transform: rotate(-360deg);
+      -webkit-transform: rotate(-360deg);
+    }
+    #changeSpan:focus #change {
+      fill: rgba(244, 241, 203, 0.7);
+      outline: none;
+    }
+    .main-icons {
+      cursor: pointer;
+      fill: rgba(0, 0, 0, 0.85);
+      margin: 0 1.4vh 0 1.4vh;
+      transition: transform ease-out 0.22s 0s, -webkit-transform ease-out 0.22s 0s;
+      width: 12vh;
+    }
+    .main-icons:hover {
+      fill: rgba(0, 0, 0, 0.35);
+      transform: scale(0.98);
+      -webkit-transform: scale(0.98);
+    }
+    main > a:focus{
+      outline: none;
+    }
+    main > a:focus .main-icons {
+      fill: rgba(0, 0, 0, 0.35);
+      transform: scale(0.98);
+      -webkit-transform: scale(0.98);
+    }
+    #changeSpan:active #change, main > a:active .main-icons {
+      fill: rgba(0, 0, 0, 0.0);
+    }
   </style>
 </head>
 <body>
@@ -166,6 +166,74 @@
 
     </main>
   </div>
-  <script src="script.js" charset="utf-8"></script>
+  <!-- <script src="script.js" charset="utf-8"></script> -->
+  <script>
+    var changeEnter = document.getElementById("changeSpan");
+    changeEnter.addEventListener("keypress", function(event) {
+        event.preventDefault();
+        if (event.keyCode == 13) {
+            changeEnter.click();
+        }
+    });
+    var big = window.matchMedia("(min-width: 741px)");
+    var small = window.matchMedia("(max-width: 740px)");
+    var bg = document.getElementById("bg");
+    var count = 0;
+    var lgImages = ["bg2.jpg", "bg3.jpg", "bg.jpg"];
+    var smImages = ["bg_mobile2.jpg", "bg_mobile3.jpg", "bg_mobile.jpg"];
+    function changeBackground() {
+      if (window.getSelection) {
+        if (window.getSelection().empty) {
+          window.getSelection().empty();
+        } else if (window.getSelection().removeAllRanges) {
+          window.getSelection().removeAllRanges();
+        }
+      } else if (document.selection) {
+        document.selection.empty();
+      }
+      if (big.matches) {
+        bg.style.backgroundImage = "url(jpg/" + lgImages[count] + ")";
+        count++;
+        if (count===lgImages.length) count=0;
+      }
+      if (small.matches) {
+        bg.style.backgroundImage = "url(jpg/" + smImages[count] + ")";
+        count++;
+        if (count===smImages.length) count=0;
+      }
+    }
+    function preloader() {
+      if (big.matches) {
+        if (document.images) {
+          var img1 = new Image();
+          var img2 = new Image();
+          img1.src = "jpg/bg2.jpg";
+          img2.src = "jpg/bg3.jpg";
+        }
+      }
+      if (small.matches) {
+        if (document.images) {
+          var img1 = new Image();
+          var img2 = new Image();
+          img1.src = "jpg/bg_mobile2.jpg";
+          img2.src = "jpg/bg_mobile3.jpg";
+        }
+      }
+    }
+    function addLoadEvent(func) {
+      var oldonload = window.onload;
+      if (typeof window.onload != 'function') {
+        window.onload = func;
+      } else {
+        window.onload = function() {
+          if (oldonload) {
+            oldonload();
+          }
+          func();
+        }
+      }
+    }
+    addLoadEvent(preloader);
+  </script>
 </body>
 </html>
