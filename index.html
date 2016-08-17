@@ -229,6 +229,16 @@
       }
       preloader();
     });
+    window.addEventListener("mozorientationchange", function() {
+      count=0;
+      if (smallLandscape.matches) {
+        bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[smLandscapeImages.length-1] + ")";
+      }
+      if (smallPortrait.matches) {
+        bg.style.backgroundImage = "url(jpg/" + smPortraitImages[smPortraitImages.length-1] + ")";
+      }
+      preloader();
+    });
     function preloader() {
       if (big.matches) {
         if (document.images) {
