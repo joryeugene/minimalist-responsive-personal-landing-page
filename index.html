@@ -195,8 +195,8 @@
     var bg = document.getElementById("bg");
     var count = 0;
     var lgImages = ["bg2.jpg", "bg3.jpg", "bg.jpg"];
-    var smLandscapeImages = ["bg_mobile2.jpg", "bg_mobile3.jpg", "bg_mobile.jpg"];
-    var smPortraitImages = ["bg_mobilev2.jpg", "bg_mobilev3.jpg", "bg_mobilev.jpg"];
+    var smLandscapeImages = ["bg_mobile.jpg", "bg_mobile2.jpg", "bg_mobile3.jpg"];
+    var smPortraitImages = ["bg_mobilev.jpg", "bg_mobilev2.jpg", "bg_mobilev3.jpg"];
     function changeBackground() {
       if (window.getSelection) {
         if (window.getSelection().empty) {
@@ -207,6 +207,7 @@
       } else if (document.selection) {
         document.selection.empty();
       }
+      count++;
       if (big.matches) {
         bg.style.backgroundImage = "url(jpg/" + lgImages[count] + ")";
       }
@@ -216,19 +217,8 @@
       if (smallPortrait.matches) {
         bg.style.backgroundImage = "url(jpg/" + smPortraitImages[count] + ")";
       }
-      count++;
       if (count===lgImages.length) count=0;
     }
-    // window.addEventListener("orientationchange", function() { // not working on Firefox?
-    //   count=0;
-    //   if (smallLandscape.matches) {
-    //     bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[smLandscapeImages.length-1] + ")";
-    //   }
-    //   if (smallPortrait.matches) {
-    //     bg.style.backgroundImage = "url(jpg/" + smPortraitImages[smPortraitImages.length-1] + ")";
-    //   }
-    //   preloader();
-    // });
     window.addEventListener("resize", function() {
       if (smallLandscape.matches) {
         bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[count] + ")";
