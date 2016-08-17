@@ -226,9 +226,11 @@
     window.addEventListener("orientationchange", function() {
       if (smallLandscape.matches) {
         bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[2] + ")";
+        preloader();
       }
       if (smallPortrait.matches) {
         bg.style.backgroundImage = "url(jpg/" + smPortraitImages[2] + ")";
+        preloader();
       }
     });
     function preloader() {
@@ -240,12 +242,20 @@
           img2.src = "jpg/bg3.jpg";
         }
       }
-      if (small.matches) {
+      if (smallLandscape.matches) {
         if (document.images) {
           var img1 = new Image();
           var img2 = new Image();
           img1.src = "jpg/bg_mobile2.jpg";
           img2.src = "jpg/bg_mobile3.jpg";
+        }
+      }
+      if (smallPortrait.matches) {
+        if (document.images) {
+          var img1 = new Image();
+          var img2 = new Image();
+          img1.src = "jpg/bg_mobilev2.jpg";
+          img2.src = "jpg/bg_mobilev3.jpg";
         }
       }
     }
