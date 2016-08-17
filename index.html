@@ -194,7 +194,7 @@
     var smallPortrait = window.matchMedia("(orientation: portrait) and (max-width: 740px)");
     var bg = document.getElementById("bg");
     var count = 0;
-    var lgImages = ["bg2.jpg", "bg3.jpg", "bg.jpg"];
+    var lgImages = ["bg.jpg", "bg2.jpg", "bg3.jpg"];
     var smLandscapeImages = ["bg_mobile.jpg", "bg_mobile2.jpg", "bg_mobile3.jpg"];
     var smPortraitImages = ["bg_mobilev.jpg", "bg_mobilev2.jpg", "bg_mobilev3.jpg"];
     function changeBackground() {
@@ -208,6 +208,7 @@
         document.selection.empty();
       }
       count++;
+      if (count===lgImages.length) count=0;
       if (big.matches) {
         bg.style.backgroundImage = "url(jpg/" + lgImages[count] + ")";
       }
@@ -217,7 +218,6 @@
       if (smallPortrait.matches) {
         bg.style.backgroundImage = "url(jpg/" + smPortraitImages[count] + ")";
       }
-      if (count===lgImages.length) count=0;
     }
     window.addEventListener("resize", function() {
       if (smallLandscape.matches) {
