@@ -220,12 +220,11 @@
       if (count===lgImages.length) count=0;
     }
     window.addEventListener("orientationchange", function() {
-      count=0;
       if (smallLandscape.matches) {
-        bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[2] + ")";
+        bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[count] + ")";
       }
       if (smallPortrait.matches) {
-        bg.style.backgroundImage = "url(jpg/" + smPortraitImages[2] + ")";
+        bg.style.backgroundImage = "url(jpg/" + smPortraitImages[count] + ")";
       }
       preloader();
       // location.reload();
