@@ -214,6 +214,10 @@
       }
     }
     window.addEventListener("resize", function() {
+      if (big.matches) {
+        bg.style.backgroundImage = "url(jpg/" + lgImages[count] + ")";
+        preloader();
+      }
       if (smallLandscape.matches) {
         bg.style.backgroundImage = "url(jpg/" + smLandscapeImages[count] + ")";
         preloader();
